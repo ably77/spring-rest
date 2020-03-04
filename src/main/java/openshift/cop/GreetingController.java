@@ -16,7 +16,7 @@ public class GreetingController {
     }
 
     @RequestMapping(value = "/v1/greeting" ,  method = RequestMethod.GET)
-    public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
+    public Greeting greeting(@RequestParam(value="name", defaultValue="World fools") String name) {
         counter.increment();
         return new Greeting((int)counter.count(),
                             String.format(template, name));
@@ -32,10 +32,10 @@ public class GreetingController {
     public HostInfo hostinfo() throws IOException {
       return new HostInfo();
     }
-    
+
     @RequestMapping(value = "/v1/envinfo" ,  method = RequestMethod.GET)
     public EnvInfo envinfo(@RequestParam(value="filter", defaultValue="*") String filter) throws IOException {
       return new EnvInfo(filter);
     }
-    
+
 }
