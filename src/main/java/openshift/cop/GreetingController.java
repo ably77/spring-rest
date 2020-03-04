@@ -16,7 +16,7 @@ public class GreetingController {
     }
 
     @RequestMapping(value = "/v1/greeting" ,  method = RequestMethod.GET)
-    public Greeting greeting(@RequestParam(value="name", defaultValue="World this is a test v4") String name) {
+    public Greeting greeting(@RequestParam(value="name", defaultValue="World this is a test v1") String name) {
         counter.increment();
         return new Greeting((int)counter.count(),
                             String.format(template, name));
