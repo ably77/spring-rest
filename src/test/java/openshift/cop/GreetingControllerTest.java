@@ -23,33 +23,7 @@ public class GreetingControllerTest {
 	@Test
 	public void testGreetingV1() throws Exception {
 		this.mockMvc.perform(get("/v1/greeting").header("Origin", "*")).andDo(print()).andExpect(status().isOk())
-				.andExpect(content().string(containsString("Hello from: //---------------------------\\
-
-				|| Squirrel! ||
-
-				\\---------------------------//
-
-				     \ /
-
-				      \|              .-'` `}
-
-				       \    _./)   /       }
-
-				           .'o   \ |       }
-
-				           '.___.'`.\    {`
-
-				           /`\_/  , `.    }
-
-				           \=' .-'   _`\  {
-
-				             `'`;/      `,  }
-
-				               _\       ;  }
-
-				              /__`;-...'--'
-
-")));
+				.andExpect(content().string(containsString("Hello from: World this is a test v4!")));
 	}
 
 }
