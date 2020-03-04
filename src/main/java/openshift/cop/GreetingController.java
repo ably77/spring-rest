@@ -8,7 +8,7 @@ import org.springframework.web.servlet.view.RedirectView;
 @RestController
 public class GreetingController {
 
-    private static final String template = "Hello, %s!";
+    private static final String template = "Hello from:";
     private final Counter counter;
 
     public GreetingController() {
@@ -16,7 +16,33 @@ public class GreetingController {
     }
 
     @RequestMapping(value = "/v1/greeting" ,  method = RequestMethod.GET)
-    public Greeting greeting(@RequestParam(value="name", defaultValue="World this is a test v3") String name) {
+    public Greeting greeting(@RequestParam(value="name", defaultValue="//---------------------------\\
+
+    || Squirrel! ||
+
+    \\---------------------------//
+
+         \ /
+
+          \|              .-'` `}
+
+           \    _./)   /       }
+
+               .'o   \ |       }
+
+               '.___.'`.\    {`
+
+               /`\_/  , `.    }
+
+               \=' .-'   _`\  {
+
+                 `'`;/      `,  }
+
+                   _\       ;  }
+
+                  /__`;-...'--'
+
+") String name) {
         counter.increment();
         return new Greeting((int)counter.count(),
                             String.format(template, name));
